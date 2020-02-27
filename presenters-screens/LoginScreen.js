@@ -1,40 +1,41 @@
 import React , {Component} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
-import Pg1btnLoginwithfacebook from '../views/components/Page1/Pg1btnLoginwithfacebook'
-import Pg1txtShalsar from '../views/components/Page1/Pg1txtShalsar'
-import Pg1Backgroundimage from '../views/components/Page1/Pg1Backgroundimage'
-import Pg2profile from '../views/components/Page2/Pg2profile'
-import Pg2txtprofilename from '../views/components/Page2/Pg2txtprofilename'
-import Pg2txtsavedamount from '../views/components/Page2/Pg2txtsavedamount'
-import Pg2energyleftindicator from '../views/components/Page2/Pg2energyleftindicator'
-import Pg2mostvisitedrestaurant from '../views/components/Page2/Pg2mostvisitedrestaurant'
+import { StyleSheet, Text, View ,SafeAreaView, ScrollView } from 'react-native';
 
 
-LoginScreen.navigationOptions={
+import Inputbox from '../views/components/Loginpage/Inputbox';
+import Loginbtn from '../views/components/Loginpage/Loginbtn';
+import Logintext from '../views/components/Loginpage/Logintext';
 
-  headerShown: false,
-  cardStyle:{
-    backgroundColor:'#fff',
-  }
-}
+import Ripple from 'react-native-material-ripple';
+
 
 
 export default function LoginScreen ({navigation})
 {
+    const pressHandler= () => {
+      navigation.navigate('HomeScreen');
+    }
+
     return (
 
       <View style={styles.container}>
+            <View style={styles.layer}>
+                    <View style={styles.box1}>
+                        <Logintext/>
+                    </View>
+                    <View style={styles.box2}>
+                        <Inputbox/>
 
-      <Pg1Backgroundimage/>
+                    </View>
+                    <View style={styles.box3}>
 
+                          <Ripple style = {styles.button} onPress={pressHandler}>
+                          <Text style = {styles.btntext}>Login</Text>
+                          </Ripple>
 
+                    </View>
+            </View>
       </View>
-
-
-
-
-
 
     );
 
@@ -42,9 +43,58 @@ export default function LoginScreen ({navigation})
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor:'#fff',
     flex:1,
-    justifyContent:'center',
+    flexDirection:'row',
     alignItems:'center',
+    justifyContent:'center',
+  },
+  layer:
+  {
+      flex:1,
+      height:337,
+
 
   },
+  box1:
+  {
+      flex:2,
+  },
+  box2:
+  {
+    flex:2,
+  },
+  box3:
+  {
+    alignItems:'center',
+    justifyContent:'center',
+    flex:1,
+  },
+
+
+  button: {
+    alignItems:'center',
+    justifyContent:'center',
+    zIndex:1,
+   overflow: 'hidden',
+   width: 187,
+   height:50,
+   borderRadius:10,
+   backgroundColor: '#D63031',
+  },
+  btntext:
+  {
+    fontWeight:'bold',
+    color:'white',
+
+  }
+
+
+
+
+
+
+
+
+
 });
