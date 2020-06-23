@@ -5,8 +5,6 @@ import { StyleSheet, Text, View ,SafeAreaView, ScrollView } from 'react-native';
 import Inputbox from '../views/components/Loginpage/Inputbox';
 import Loginbtn from '../views/components/Loginpage/Loginbtn';
 import Logintext from '../views/components/Loginpage/Logintext';
-
-<<<<<<< HEAD
 import Ripple from 'react-native-material-ripple';
 
 
@@ -36,24 +34,11 @@ export default function LoginScreen ({navigation})
 
                     </View>
             </View>
-=======
 
-
-export default class LoginScreen extends Component {
-  render(){
-    return (
-
-      <View style={styles.container}>
-
-      <Resultpgresultdata/>
-
-
->>>>>>> parent of 61457d1... 20 feb 9PM
       </View>
 
     );
   }
-}
 
 const styles = StyleSheet.create({
   container: {
